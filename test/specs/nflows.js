@@ -3,16 +3,18 @@ var dragAndDrop = require('html-dnd').codeForSelectors;
 // var webdriverio = require('webdriverio');
 // //var options = { desiredCapabilities: { browserName: 'chrome' } };
 // var client = webdriverio.remote();
-
+var url = ''
+var uname =''
+var pwd=''
 describe('nFlows ', () => {
     it('should login with valid credentials', async () => {
         allureReporter.addFeature('nFlowsDraganddrop')
-       await browser.url(`https://nt-uat.nflows.com/nFlows/login/login.jsp`)
+       await browser.url(`url`)
        await browser.pause(5000)
      //   const username =- $('#uname')
      //  await browser.$('#uname').waitforExist({setTimeout:5000})
-       await browser.$('#uname').setValue('AA662')
-       await browser.$('#password').setValue('Nt@123')
+       await browser.$('#uname').setValue(uname)
+       await browser.$('#password').setValue(pwd)
        await browser.$('.btn.btn-login.loginSubmit').click()
        
        await browser.$('#nav-icon1').waitForExist({setTimeout:5000})
